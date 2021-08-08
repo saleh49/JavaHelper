@@ -6,25 +6,30 @@
  * * Here arrays of objects are concidered as the list or the naming convention.
  * 
  *****************Available Methods.*******************************************
- 1. getInt(void) and showInt(int n)
- 2. getIntList() and showIntList(int[] n)
- 3. getItemsList() and showItemsList(String[] arr)
+ * 1. getInt(void) and showInt(int n)
+ * 2. getIntList() and showIntList(int[] n)
+ * 3. getItemsList() and showItemsList(String[] arr)
+ * 4. nextLine()
+ * 5. skipLines(int n)
 *******************************************************************************/
 import java.io.*;
 
 
 class JavaReadWrite {
     public static void main(String[] args) throws IOException {
-        /* Reading Input */
+        /* Reading Input 
         int x1          = getInt();
         int[] x2        = getIntList();
-        String[] x3     = getItemsList();
+        String[] x3     = getItemsList();*/
 
         
-        /* Writing Output */
+        /* Writing Output 
         showInt(x1);
+        nextLine();
         showIntList(x2);
-        showItemsList(x3);
+        nextLine();
+        showItemsList(x3);*/
+        skipLines(10);
     }
     /* Read Integer */
     public static int getInt() {
@@ -101,6 +106,14 @@ class JavaReadWrite {
                 System.out.print(" ");
             }
         }
+    }
+    public static void nextLine() {
+        System.out.printf("\n");
+    }
+
+    public static void skipLines(int n) {
+        for(int i = 0; i < n; i++)
+            System.out.printf("\n");
     }
 
 }
