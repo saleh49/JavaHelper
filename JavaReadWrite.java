@@ -9,10 +9,13 @@
  * 1. getInt(void) and showInt(int n)
  *      -> input - 3 etc. output - 3
  * 2. getIntList() and showIntList(int[] n)
- * 3. getItemsList() and showItemsList(String[] arr)
- * 4. nextLine()
- * 5. skipLines(int n)
- * 6. separatorLine(char sym, int n) 
+ *      -> input - 34 54 223 34 output - 34 54 223 34
+ * 3. getChar() and showChar(char c)
+ * 4. getCharList and showCharList(char[] c)
+ * 5. getItemsList() and showItemsList(String[] arr)
+ * 6. nextLine()
+ * 7. skipLines(int n)
+ * 8. separatorLine(char sym, int n) 
  *      -> Used as sperator, sym = '-', '*', '#' etc. and n is number of dots.
 *******************************************************************************/
 import java.io.*;
@@ -23,13 +26,12 @@ class JavaReadWrite {
         /* Reading Input 
         int x1          = getInt();
         int[] x2        = getIntList();
+        char c          = getChar();
         String[] x3     = getItemsList();*/
-
-        int x1          = getInt();
-        seprator('-', 15);
-        showInt(x1);
+        
         /* Writing Output 
         showInt(x1);
+        showChar(c);
         nextLine();
         showIntList(x2);
         nextLine();
@@ -54,6 +56,24 @@ class JavaReadWrite {
     }
     public static void showInt(int n) {
         System.out.printf("%d", n);
+    }
+
+    /* Read Character */
+    public static char getChar() {
+        char c = 's'; //Default
+        BufferedReader reader = null;
+        
+        try {
+            reader = new BufferedReader(new InputStreamReader(System.in));
+            c = (char)(reader.read());
+        } catch (NumberFormatException | IOException e) {
+            System.out.println("Please provide provide some integer value.");
+            //e.printStackTrace();
+        } 
+        return c;
+    }
+    public static void showChar(char c) {
+        System.out.printf("%c", c);
     }
 
     /* It will read the integer array or list. The input - 1 2 3 4 5 */
