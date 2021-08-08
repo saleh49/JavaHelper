@@ -7,12 +7,13 @@
  * 
  *****************Available Methods.*******************************************
  * 1. getInt(void) and showInt(int n)
+ *      -> input - 3 etc. output - 3
  * 2. getIntList() and showIntList(int[] n)
  * 3. getItemsList() and showItemsList(String[] arr)
  * 4. nextLine()
  * 5. skipLines(int n)
  * 6. separatorLine(char sym, int n) 
- *      Used as sperator, sym = '-', '*', '#' etc. and n is number of dots.
+ *      -> Used as sperator, sym = '-', '*', '#' etc. and n is number of dots.
 *******************************************************************************/
 import java.io.*;
 
@@ -24,7 +25,9 @@ class JavaReadWrite {
         int[] x2        = getIntList();
         String[] x3     = getItemsList();*/
 
-        
+        int x1          = getInt();
+        seprator('-', 15);
+        showInt(x1);
         /* Writing Output 
         showInt(x1);
         nextLine();
@@ -121,9 +124,11 @@ class JavaReadWrite {
     }
 
     private static void seprator(char c, int n) {
+        System.out.printf("\n");
         for(int i = 0; i < n; i++){
             System.out.printf("%c", c);
         }
+        System.out.printf("\n");
     }
 
 }
