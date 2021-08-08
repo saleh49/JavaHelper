@@ -11,6 +11,8 @@
  * 3. getItemsList() and showItemsList(String[] arr)
  * 4. nextLine()
  * 5. skipLines(int n)
+ * 6. separatorLine(char sym, int n) 
+ *      Used as sperator, sym = '-', '*', '#' etc. and n is number of dots.
 *******************************************************************************/
 import java.io.*;
 
@@ -28,9 +30,11 @@ class JavaReadWrite {
         nextLine();
         showIntList(x2);
         nextLine();
-        showItemsList(x3);*/
-        skipLines(10);
+        showItemsList(x3);
+        skipLines(10);*/
+        seprator('-', 15);
     }
+    
     /* Read Integer */
     public static int getInt() {
         int n = 0; //Default
@@ -114,6 +118,12 @@ class JavaReadWrite {
     public static void skipLines(int n) {
         for(int i = 0; i < n; i++)
             System.out.printf("\n");
+    }
+
+    private static void seprator(char c, int n) {
+        for(int i = 0; i < n; i++){
+            System.out.printf("%c", c);
+        }
     }
 
 }
