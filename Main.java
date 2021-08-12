@@ -7,6 +7,7 @@ class Main {
         Scanner in = new Scanner(System.in);
         String x = in.nextLine().trim();
         String arr = in.nextLine().trim();
+		in.close();
         /*Convert to integer*/
         int n = Integer.parseInt(x);
         /*Splitting the string by space and storing it as an array*/
