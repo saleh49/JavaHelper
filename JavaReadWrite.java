@@ -17,6 +17,7 @@
  * 7. skipLines(int n)
  * 8. separatorLine(char sym, int n) 
  *      -> Used as sperator, sym = '-', '*', '#' etc. and n is number of dots.
+ * 9. printText(String message);
 *******************************************************************************/
 import java.io.*;
 
@@ -39,7 +40,10 @@ class JavaReadWrite {
         skipLines(10);*/
         seprator('-', 15);
     }
-    
+    /* Print given message, usually for User Interaction */
+    public static void printText(String message){
+        System.out.println(message);
+    }
     /* Read Integer */
     public static int getInt() {
         int n = 0; //Default
