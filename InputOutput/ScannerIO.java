@@ -1,3 +1,4 @@
+package InputOutput;
 /*****************************************************************************
  * Copyright @ Sadan K. sadan.cse@gmail.com
  * 
@@ -21,12 +22,12 @@
 *******************************************************************************/
 import java.util.*;
 
-class ScannerIO {
+public class ScannerIO {
     public static void printText(String message){
         System.out.println(message);
     }
     /* Read Integer */
-    public static int getInt() {
+    public int getInt() {
         int n = 0; //Default
         
         try {
@@ -34,13 +35,13 @@ class ScannerIO {
             n = Integer.parseInt(in.nextLine().trim());
             in.close();
         } catch (Exception e) {
-            System.out.println("Please provide provide some integer value.");
+            System.out.println("Please provide some integer value.");
         }
 
         
         return n;
     }
-    public static void showInt(int n) {
+    public void showInt(int n) {
         System.out.printf("%d", n);
     }
 
@@ -54,12 +55,12 @@ class ScannerIO {
         c = str.charAt(0);
         return c;
     }
-    public static void showChar(char c) {
+    public void showChar(char c) {
         System.out.printf("%c", c);
     }
 
     /* It will read the integer array or list. The input - 1 2 3 4 5 */
-    public static int[] getIntList() {
+    public int[] getIntList() {
         int[] numbers = {0, 0, 0};//Default Value
         try {
             Scanner in = new Scanner(System.in);
@@ -79,7 +80,7 @@ class ScannerIO {
         return numbers;
     }
 
-    public static void showIntList(int[] intArray) {
+    public void showIntList(int[] intArray) {
         int n = intArray.length;
         for(int i = 0; i < n; i++){
             System.out.print(intArray[i]);
@@ -90,7 +91,7 @@ class ScannerIO {
     }
 
     /* Read Array of strings aka list items */
-    public static String[] getItemsList(){
+    public String[] getItemsList(){
         String[] strItems = {"Sahir", "Samar","Saleh"};
         Scanner in = new Scanner(System.in);
         String rawArray = in.nextLine().trim();
@@ -100,7 +101,7 @@ class ScannerIO {
     }
 
     /* Show String Array - aka itemsList */
-    public static void showItemsList(String[] strArray) {
+    public void showItemsList(String[] strArray) {
         int n = strArray.length;
         for(int i = 0; i < n; i++){
             System.out.print(strArray[i]);
@@ -109,16 +110,16 @@ class ScannerIO {
             }
         }
     }
-    public static void nextLine() {
+    public void nextLine() {
         System.out.printf("\n");
     }
 
-    public static void skipLines(int n) {
+    public void skipLines(int n) {
         for(int i = 0; i < n; i++)
             System.out.printf("\n");
     }
 
-    public static void seprator(char c, int n) {
+    public void seprator(char c, int n) {
         System.out.printf("\n");
         for(int i = 0; i < n; i++){
             System.out.printf("%c", c);

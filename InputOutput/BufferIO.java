@@ -1,9 +1,11 @@
+package InputOutput;
 /*****************************************************************************
  * Copyright @ Sadan K. sadan.cse@gmail.com
  * 
  * Instruction
  * * One can use this input read and write using BufferedIo.
- * * Here arrays of objects are concidered as the list or the naming convention.
+ * * Here arrays of objects are concidered as the list or 
+ * * the naming convention.
  * 
  *****************Available Methods.*******************************************
  * 1. getInt(void) and showInt(int n)
@@ -22,16 +24,15 @@
 import java.io.*;
 
 
-class BufferIO {
+public class BufferIO {
     
     /* Print given message, usually for User Interaction */
-    public static void printText(String message){
+    public void printText(String message){
         System.out.println(message);
     }
     /* Read Integer */
-    public static int getInt() {
+    public int getInt() {
         int n = 0; //Default
-        
         
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -42,12 +43,12 @@ class BufferIO {
         } 
         return n;
     }
-    public static void showInt(int n) {
+    public void showInt(int n) {
         System.out.printf("%d", n);
     }
 
     /* Read Character */
-    public static char getChar() {
+    public char getChar() {
         char c = 's'; //Default
         
         try {
@@ -59,12 +60,12 @@ class BufferIO {
         } 
         return c;
     }
-    public static void showChar(char c) {
+    public void showChar(char c) {
         System.out.printf("%c", c);
     }
 
     /* It will read the integer array or list. The input - 1 2 3 4 5 */
-    public static int[] getIntList() {
+    public int[] getIntList() {
         int[] numbers = {0, 1, 2};//Default Value
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -82,7 +83,7 @@ class BufferIO {
         return numbers;
     }
 
-    public static void showIntList(int[] intArray) {
+    public void showIntList(int[] intArray) {
         int n = intArray.length;
         for(int i = 0; i < n; i++){
             System.out.print(intArray[i]);
@@ -93,7 +94,7 @@ class BufferIO {
     }
 
     /* Read Array of strings aka list items */
-    public static String[] getItemsList(){
+    public String[] getItemsList(){
         String[] strItems = {"Sahir", "Samar","Saleh"};
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -110,7 +111,7 @@ class BufferIO {
     }
 
     /* Show String Array - aka itemsList */
-    public static void showItemsList(String[] strArray) {
+    public void showItemsList(String[] strArray) {
         int n = strArray.length;
         for(int i = 0; i < n; i++){
             System.out.print(strArray[i]);
@@ -119,16 +120,16 @@ class BufferIO {
             }
         }
     }
-    public static void nextLine() {
+    public void nextLine() {
         System.out.printf("\n");
     }
 
-    public static void skipLines(int n) {
+    public void skipLines(int n) {
         for(int i = 0; i < n; i++)
             System.out.printf("\n");
     }
 
-    public static void seprator(char c, int n) {
+    public void seprator(char c, int n) {
         System.out.printf("\n");
         for(int i = 0; i < n; i++){
             System.out.printf("%c", c);

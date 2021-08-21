@@ -1,3 +1,4 @@
+package SortingAlgorithms;
 /*****************************************************************************
  * Copyright @ Sadan K. sadan.cse@gmail.com
  * 
@@ -39,18 +40,8 @@
 *******************************************************************************/
 public class SortingAlgorithms {
     //private int order = 0;
-    public static void main(String[] args) {
-        int[] x = {2, 4, 1, 9, 8, 7, 4};
-        BufferIO.printText("Before Sorting");
-        BufferIO.showIntList(x);
-        insertionSort(x, 1);
-        //JavaReadWrite ob = new JavaReadWrite();
-        BufferIO.skipLines(2);
-        BufferIO.printText("After Sorting.");
-        BufferIO.showIntList(x);
-    }
     /* Bubble Sort */
-    public static void bubbleSort(int[] arr, int order) {
+    public void bubbleSort(int[] arr, int order) {
         int n = arr.length;
         if(order != 0){
             for(int i = 0; i < n; i++){
@@ -77,7 +68,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void insertionSort(int[] arr, int order){
+    public void insertionSort(int[] arr, int order){
         int n = arr.length;
         if(order != 0){
             for(int i = 1; i < n; ++i){

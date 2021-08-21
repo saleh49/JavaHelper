@@ -1,12 +1,18 @@
+import InputOutput.*;
+import SortingAlgorithms.*;
 // don't change the name of this class
 // you can add inner classes if needed
 class Main {
 	public static void main (String[] args) {
-		int x = BufferIO.getInt();
-		int y = ScannerIO.getInt();
-		int[] l = ScannerIO.getIntList();
-		BufferIO.showInt(x);
-		BufferIO.showInt(y);
-		ScannerIO.showIntList(l);
+		BufferIO BufferIO = new BufferIO();
+		BubbleSort BubbleSort = new BubbleSort();
+
+		int[] x = BufferIO.getIntList();
+		BufferIO.printText("Before Sorting");
+		BufferIO.showIntList(x);
+		BubbleSort.bubbleSort(x, 0);
+		BufferIO.nextLine();
+		BufferIO.printText("After Sorting");
+		BufferIO.showIntList(x);
 	}
 }
