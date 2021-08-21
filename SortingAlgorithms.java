@@ -41,13 +41,13 @@ public class SortingAlgorithms {
     //private int order = 0;
     public static void main(String[] args) {
         int[] x = {2, 4, 1, 9, 8, 7, 4};
-        JavaReadWrite.printText("Before Sorting");
-        JavaReadWrite.showIntList(x);
+        BufferIO.printText("Before Sorting");
+        BufferIO.showIntList(x);
         insertionSort(x, 1);
         //JavaReadWrite ob = new JavaReadWrite();
-        JavaReadWrite.skipLines(2);
-        JavaReadWrite.printText("After Sorting.");
-        JavaReadWrite.showIntList(x);
+        BufferIO.skipLines(2);
+        BufferIO.printText("After Sorting.");
+        BufferIO.showIntList(x);
     }
     /* Bubble Sort */
     public static void bubbleSort(int[] arr, int order) {

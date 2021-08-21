@@ -2,7 +2,7 @@
  * Copyright @ Sadan K. sadan.cse@gmail.com
  * 
  * Instruction
- * * One can use this input read and write using java.
+ * * One can use this input read and write using Scanner.
  * * Here arrays of objects are concidered as the list or the naming convention.
  * 
  *****************Available Methods.*******************************************
@@ -19,43 +19,25 @@
  *      -> Used as sperator, sym = '-', '*', '#' etc. and n is number of dots.
  * 9. printText(String message);
 *******************************************************************************/
-import java.io.*;
+import java.util.*;
 
-
-class JavaReadWrite {
-    public static void main(String[] args) throws IOException {
-        /* Reading Input 
-        int x1          = getInt();
-        int[] x2        = getIntList();
-        char c          = getChar();
-        String[] x3     = getItemsList();*/
-        
-        /* Writing Output 
-        showInt(x1);
-        showChar(c);
-        nextLine();
-        showIntList(x2);
-        nextLine();
-        showItemsList(x3);
-        skipLines(10);*/
-        seprator('-', 15);
-    }
-    /* Print given message, usually for User Interaction */
+class ScannerIO {
     public static void printText(String message){
         System.out.println(message);
     }
     /* Read Integer */
     public static int getInt() {
         int n = 0; //Default
-        BufferedReader reader = null;
         
         try {
-            reader = new BufferedReader(new InputStreamReader(System.in));
-            n = Integer.parseInt(reader.readLine().trim());
-        } catch (NumberFormatException | IOException e) {
+            Scanner in = new Scanner(System.in);
+            n = Integer.parseInt(in.nextLine().trim());
+            in.close();
+        } catch (Exception e) {
             System.out.println("Please provide provide some integer value.");
-            //e.printStackTrace();
-        } 
+        }
+
+        
         return n;
     }
     public static void showInt(int n) {
@@ -65,15 +47,11 @@ class JavaReadWrite {
     /* Read Character */
     public static char getChar() {
         char c = 's'; //Default
-        BufferedReader reader = null;
         
-        try {
-            reader = new BufferedReader(new InputStreamReader(System.in));
-            c = (char)(reader.read());
-        } catch (NumberFormatException | IOException e) {
-            System.out.println("Please provide provide some integer value.");
-            //e.printStackTrace();
-        } 
+        Scanner in = new Scanner(System.in);
+        String str = in.next();
+        in.close();
+        c = str.charAt(0);
         return c;
     }
     public static void showChar(char c) {
@@ -82,20 +60,21 @@ class JavaReadWrite {
 
     /* It will read the integer array or list. The input - 1 2 3 4 5 */
     public static int[] getIntList() {
-        int[] numbers = {0, 1, 2};//Default Value
-        BufferedReader reader = null;
-        reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] numbers = {0, 0, 0};//Default Value
         try {
-            String rawArray = reader.readLine().trim();
+            Scanner in = new Scanner(System.in);
+            String rawArray = in.nextLine().trim();
+            in.close();
             String[] splitStr = rawArray.split("\\s+");
             int n = splitStr.length;
             numbers = new int[n];
             for(int i = 0; i < n; i++) {
                 numbers[i] = Integer.parseInt(splitStr[i]);
-            }  
-        } catch (NumberFormatException | IOException e) {
+            }
+            
+        } catch (Exception e) {
             System.out.println("Please provide a number array like - 1 2 3 4 10.");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return numbers;
     }
@@ -113,18 +92,10 @@ class JavaReadWrite {
     /* Read Array of strings aka list items */
     public static String[] getItemsList(){
         String[] strItems = {"Sahir", "Samar","Saleh"};
-
-        BufferedReader reader = null;
-        reader = new BufferedReader(new InputStreamReader(System.in));
-
-        try {
-            String rawArray = reader.readLine().trim();
-            strItems = rawArray.split("\\s+");
-             
-        } catch (NumberFormatException | IOException e) {
-            System.out.println("Please provide a number array like - 1 2 3 4 10.");
-            e.printStackTrace();
-        }
+        Scanner in = new Scanner(System.in);
+        String rawArray = in.nextLine().trim();
+        in.close();
+        strItems = rawArray.split("\\s+");
         return strItems;
     }
 
@@ -147,12 +118,11 @@ class JavaReadWrite {
             System.out.printf("\n");
     }
 
-    private static void seprator(char c, int n) {
+    public static void seprator(char c, int n) {
         System.out.printf("\n");
         for(int i = 0; i < n; i++){
             System.out.printf("%c", c);
         }
         System.out.printf("\n");
     }
-
 }
